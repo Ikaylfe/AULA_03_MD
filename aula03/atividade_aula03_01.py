@@ -10,7 +10,7 @@ df_custos_moveis = pd.read_csv('planilha_moveis.csv')
 print(df_custos_moveis)
 
 df_custos_moveis['Total arrecadado'] = (
-    df_custos_moveis ['Preco']+
+    df_custos_moveis ['Preco'] * 
     df_custos_moveis ['Vendidos']
 )
 
@@ -44,6 +44,6 @@ q3 = np.quantile(df_custos_moveis['Total arrecadado'], 0.75)
 
 print('\nMédidas de posição')
 print(100*"_")
-print(f'Faixa de menores preços: {q1: .2f}')
-print(f'Faixa central de preços dos produtos: {q2}')
-print(f'Faixa de maior margem financeira: {q3: .2f}')
+print(f'Os menores preços vão até: {q1: .2f}')
+print(f'Faixa central de preços dos produtos indica-se por: {q2: .2f}')
+print(f'Os maiores preços são a partir de : {q3: .2f}')
